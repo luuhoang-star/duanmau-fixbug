@@ -75,7 +75,8 @@ CREATE TABLE `sanpham` (
   `img` varchar(255) NOT NULL,
   `mota` text NOT NULL,
   `luotxem` int(11) NOT NULL DEFAULT 0,
-  `iddm` int(11) NOT NULL
+  `iddm` int(11) NOT NULL,
+   `trangthai` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
