@@ -116,8 +116,8 @@ CREATE TABLE `taikhoan` (
 
 INSERT INTO `taikhoan` (`id`, `user`, `pass`, `email`, `address`, `tel`, `role`) VALUES
 (1, 'Admin', '123456', 'admin@fpt.edu.vn', NULL, NULL, 1),
-(2, 'Hoàng Long', '123456', 'longhh7@fpt.edu.vn', NULL, NULL, 2),
-(3, 'Thành Trung', '1234565', 'trungnt173@fpt.edu.vn', 'Hà Nội', NULL, 2);
+(2, 'User', '123456', 'user@fpt.edu.vn', NULL, NULL, 0),
+(3, 'Thành Trung', '1234565', 'trungnt173@fpt.edu.vn', 'Hà Nội', NULL, 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
