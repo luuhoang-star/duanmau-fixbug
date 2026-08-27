@@ -1,51 +1,39 @@
-
 <div class="row2">
-    <div class="row2 font_title">
-      <h1>BIỂU ĐỒ</h1>
+    <div class="font_title">
+        <h1><i class="fa-solid fa-chart-pie"></i> BIỂU ĐỒ TỶ LỆ SẢN PHẨM THEO DANH MỤC</h1>
+        <a href="index.php?act=thongke" class="btn btn-secondary" style="padding: 8px 16px; font-size: 13.5px;"><i class="fa-solid fa-table"></i> Bảng số liệu thống kê</a>
     </div>
-    <div class="row2 form_content ">
-      <div
-              id="myChart" style="width:100%; width:800px; height:500px; align-items: center">
-      </div>
 
-      <script>
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
+    <div class="form_content" style="padding: 25px; text-align: center;">
+        <div id="piechart_3d" style="width: 100%; height: 500px; margin: 0 auto;"></div>
 
-        function drawChart() {
+        <script type="text/javascript">
+            google.charts.load("current", {packages:["corechart"]});
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Danh mục', 'Số lượng sản phẩm'],
+                    <?php
+                    if (!empty($dsthongke)) {
+                        foreach ($dsthongke as $tk) {
+                            echo "['" . addslashes($tk['name']) . "', " . (int)$tk['soluong'] . "],";
+                        }
+                    }
+                    ?>
+                ]);
 
-// Set Data
-          // const data = google.visualization.arrayToDataTable([
-          //   ['Contry', 'Mhl'],
-          //   ['Italy',54.8],
-          //   ['France',48.6],
-          //   ['Spain',44.4],
-          //   ['USA',23.9],
-          //   ['Argentina',14.5]
-          // ]);
-          const data = google.visualization.arrayToDataTable([
-          ['Danh mục', 'Số lượng'],
-          <?php
-            foreach($dsthongke as $thongke){
-              extract($thongke);
-              echo "['$name', $soluong],";
+                var options = {
+                    title: 'Phần trăm số lượng sản phẩm theo từng danh mục',
+                    is3D: true,
+                    fontSize: 14,
+                    fontName: 'Plus Jakarta Sans',
+                    chartArea: {width: '85%', height: '80%'},
+                    colors: ['#4f46e5', '#0ea5e9', '#10b981', '#f59e0b', '#f43f5e', '#8b5cf6', '#06b6d4']
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+                chart.draw(data, options);
             }
-          ?>
-          ]);
-
-// Set Options
-          const options = {
-            title:'Biểu đồ số lượng sản phẩm trong danh mục',
-            is3D:true
-          };
-
-// Draw
-          const chart = new google.visualization.PieChart(document.getElementById('myChart'));
-          chart.draw(data, options);
-
-        }
-      </script>
-
+        </script>
     </div>
-  </div>
-
+</div>

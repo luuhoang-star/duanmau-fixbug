@@ -1,3 +1,3 @@
-<body>
-    admin/footer 
+    </div>
+</body>
 </html>

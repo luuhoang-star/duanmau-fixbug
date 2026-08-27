@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 220" width="300" height="220">
+  <rect width="300" height="220" fill="#f1f5f9" rx="8" />
+  <g transform="translate(110, 60)" fill="#94a3b8">
+    <path d="M70 10H10C4.5 10 0 14.5 0 20V70C0 75.5 4.5 80 10 80H70C75.5 80 80 75.5 80 70V20C80 14.5 75.5 10 70 10ZM72 70C72 71.1 71.1 72 70 72H10C8.9 72 8 71.1 8 70V20C8 18.9 8.9 18 10 18H70C71.1 18 72 18.9 72 20V70Z"/>
+    <circle cx="28" cy="34" r="8"/>
+    <path d="M14 66L32 44L44 56L56 40L68 56V66H14Z"/>
+  </g>
+  <text x="150" y="170" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#64748b" text-anchor="middle">Hình ảnh sản phẩm</text>
+</svg>

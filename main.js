@@ -1,32 +1,39 @@
-var album=[];
-for(var i=0;i<5;i++){
-    album[i]=new Image();
-    album[i].src="./img/anh"+i+".jpg";
+var album = [];
+for (var i = 0; i < 5; i++) {
+    album[i] = new Image();
+    album[i].src = "./img/anh" + i + ".jpg";
 }
- var interval=setInterval(slideshow,2000);
-index=0;
-function slideshow(){
+
+var index = 0;
+var interval = setInterval(slideshow, 3000);
+
+function slideshow() {
     index++;
-    if(index>4){
-        index=0;
+    if (index >= 5) {
+        index = 0;
     }
-    document.getElementById("banner").src=album[index].src;
-   
-    
+    updateBanner();
 }
-function next(){
+
+function next() {
     index++;
-    if(index>4){
-        index=0;
+    if (index >= 5) {
+        index = 0;
     }
-    document.getElementById("banner").src=album[index].src;
-   
+    updateBanner();
 }
-function pre(){
+
+function pre() {
     index--;
-    if(index<0){
-        index=4;
+    if (index < 0) {
+        index = 4;
     }
-    document.getElementById("banner").src=album[index].src;
-   
+    updateBanner();
+}
+
+function updateBanner() {
+    var bannerEl = document.getElementById("banner");
+    if (bannerEl && album[index]) {
+        bannerEl.src = album[index].src;
+    }
 }
